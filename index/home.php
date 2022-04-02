@@ -23,9 +23,8 @@
       Thus, it is you who decides the difficulty of your next question which keeps quizzing fun and helps you learn confidently.
     </p>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-      <button type="button" class="btn btn-outline-dark">Login</button>
-      <button type="button" class="btn btn-outline-dark">Register</button>
+    <div class="d-grid justify-content-md-center">
+      <a href="login.php"><button type="button" class="btn btn-outline-dark">Login</button>
     </div>
 
     <!-- Bootstrap -->

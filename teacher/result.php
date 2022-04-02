@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizard</title>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- CSS -->
-    <!-- <link rel="stylesheet" href="teacher.css"> -->
+    <link rel="stylesheet" href="student.css">
 
     <!-- Bootstrap 5 CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
@@ -23,22 +24,15 @@
     <!-- JS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 
-    <style>
-       .navi{
-           display: inline-block;
-       }
-       
-    </style>
 </head>
 <body>
-<div class="navi">
     <div class="d-flex flex-column vh-100 flex-shrink-0 p-3 text-white bg-dark" style="width: 250px;"> <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"> <svg class="bi me-2" width="40" height="32"> </svg> <span class="fs-4">Quizard!</span> </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item"> <a href="#" class="nav-link active" aria-current="page"> <i class="fa fa-home"></i><span class="ms-2">Home</span> </a> </li>
-            <li> <a href="quiz1.html" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Create Quiz</span> </a> </li>
-            <li> <a href="quizlist.html" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Quizzes</span> </a> </li>
-            <li> <a href="result1.html" class="nav-link text-white"> <i class="fa fa-first-order"></i><span class="ms-2">Result</span> </a> </li>
+            <li class="nav-item"> <a href="teacher.php" class="nav-link text-white" aria-current="page"> <i class="fa fa-home"></i><span class="ms-2">Home</span> </a> </li>
+            <li> <a href="quiz.php" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Quizzes</span> </a> </li>
+            <li> <a href="create_quiz.php" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Create Quiz</span> </a> </li>
+            <li> <a href="result.php" class="nav-link active"> <i class="fa fa-first-order"></i><span class="ms-2">Result</span> </a> </li>
         
         </ul>
         <hr>
@@ -54,27 +48,8 @@
             </ul>
         </div>
     </div>
-</div>
 
-<div class="navi">
-    <table align="center" style="width: 60%;" border="1">
-        <tr>
-            <td rowspan="3" colspan="6">
-               <input type="text" placeholder=" Quiz name">
-            </td>
-            <td align="center">
-                <Button name="Modify">Modify</Button><br>
-                
-                <button name="Delete">Delete</button>
-            </td>
-        </tr>
-    </table>
-</div>
-
-    
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-
 </body>
 </html>
