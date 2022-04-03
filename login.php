@@ -14,8 +14,52 @@ if ($con->connect_error) {
 mysqli_set_charset($con, "utf8");
 
 $msg = '';
+$role = '';
 
+if (isset($_POST["login"]))
+{
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
+    $query = "SELECT * FROM login where username = '$username' AND password = '$password'";
+    $result = mysqli_query($con, $query);
+
+    if(mysqli_num_rows($result) > 0)
+    {
+        while($row = $result->fetch_assoc())
+        {
+            $role = $row["role"];
+            if($password == $row["password"])
+            {
+                if (empty($_POST["username"])) 
+                {
+                    $msg = "Please enter username.";
+                }
+
+                if($role == "admin")
+                {
+                    $_SESSION['login_admin'] = $row["first_name"];
+                    header('Location: admin.php');
+                }
+                else if($role == "teacher")
+                {
+                    $_SESSION['login_teacher'] = $row["first_name"];
+                    header('Location: teacher.php');
+                }
+                else
+                {
+                    $_SESSION['login_student'] = $row["first_name"];
+                    header('Location: student.php');
+                }
+            }
+            else
+            {
+                $msg = "Wrong password, please retry.";
+            }
+            
+        }
+    }
+}
 
 $con->close();
 ?>
@@ -33,7 +77,7 @@ $con->close();
 </head>
 <body>
     <section class="vh-100 gradient-custom">
-    <form method="post">
+    <form method="post" action="#">
     <div class="container py-5">
         <div class="row d-flex justify-content-center align-items-center">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -46,14 +90,16 @@ $con->close();
                 <p class="text-white-50 mb-5">Please enter your username and password.</p>
 
                 <div class="form-outline form-white mb-4">
-                    <input type="email" id="typeEmailX" class="form-control form-control-lg" placeholder="Username"/>
+                    <input type="email" id="typeEmailX" name="username" class="form-control form-control-lg" placeholder="Username"/>
                 </div>
 
                 <div class="form-outline form-white mb-4">
-                    <input type="password" id="typePasswordX" class="form-control form-control-lg" placeholder="Password"/>
+                    <input type="password" id="typePasswordX" name="password" class="form-control form-control-lg" placeholder="Password"/>
                 </div>
 
-                <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                <?php echo $msg; ?>
+
+                <button class="btn btn-outline-light btn-lg px-5" type="submit" name="login">Login</button>
 
                 <div class="d-flex justify-content-center text-center mt-4 pt-1">
                 </div>
