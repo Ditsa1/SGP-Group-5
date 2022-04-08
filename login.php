@@ -1,17 +1,7 @@
 <?php
 session_start();
 
-$server = "localhost";
-$username = "root";
-$password = "";
-$db = "quizard";
-
-$con = mysqli_connect($server, $username, $password, $db);
-if ($con->connect_error) {
-	die('Connect Error (' . $con->connect_errno . ') ' . $con->connect_error);
-}
-
-mysqli_set_charset($con, "utf8");
+include 'config.php';
 
 $msg = '';
 $role = '';
@@ -29,13 +19,13 @@ if (isset($_POST["login"]))
         while($row = $result->fetch_assoc())
         {
             $role = $row["role"];
-            if($password == $row["password"])
+            if (empty($_POST["username"])) 
             {
-                if (empty($_POST["username"])) 
-                {
                     $msg = "Please enter username.";
-                }
+            }
 
+            else if($password == $row["password"] AND $username == $row["username"])
+            {
                 if($role == "admin")
                 {
                     $_SESSION['login_admin'] = $row["first_name"];
@@ -77,7 +67,7 @@ $con->close();
 </head>
 <body>
     <section class="vh-100 gradient-custom">
-    <form method="post" action="#">
+    <form method="post" action="login.php">
     <div class="container py-5">
         <div class="row d-flex justify-content-center align-items-center">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">

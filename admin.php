@@ -22,7 +22,7 @@ if(!isset($_SESSION['login_admin']))
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="student.css">
+    <link rel="stylesheet" href="css/student.css">
 
     <!-- Bootstrap 5 CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
@@ -42,9 +42,9 @@ if(!isset($_SESSION['login_admin']))
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item"> <a href="admin.php" class="nav-link active" aria-current="page"> <i class="fa fa-home"></i><span class="ms-2">Home</span> </a> </li>
-            <li> <a href="" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Student</span> </a> </li>
-            <li> <a href="" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Teacher</span> </a> </li>
-            <li> <a href="" class="nav-link text-white"> <i class="fa fa-first-order"></i><span class="ms-2">Result</span> </a> </li>
+            <li> <a href="a_student.php" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Students</span> </a> </li>
+            <li> <a href="a_teacher.php" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Teachers</span> </a> </li>
+            <li> <a href="a_result.php" class="nav-link text-white"> <i class="fa fa-first-order"></i><span class="ms-2">Result</span> </a> </li>
         
         </ul>
         <hr>
