@@ -1,12 +1,9 @@
 <?php
-
-session_start();
-
-if(!isset($_SESSION['login_teacher']))
-{
-    header('Location: login.php');
+include 'config.php';
+if (!isset($_SESSION['login_teacher'])) {
+	header('Location: login.php');
 }
-
+$result = mysqli_query($con, "select * from quiz_list;");
 ?>
 
 <!DOCTYPE html>
@@ -90,10 +87,10 @@ if(!isset($_SESSION['login_teacher']))
             <li> <a href="t_quiz.php" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Quizzes</span> </a> </li>
             <li> <a href="t_create_quiz.php" class="nav-link text-white"> <i class="fa fa-dashboard"></i><span class="ms-2">Create Quiz</span> </a> </li>
             <li> <a href="t_result.php" class="nav-link active"> <i class="fa fa-first-order"></i><span class="ms-2">Result</span> </a> </li>
-        
+            <li> <a href="t_contact.php" class="nav-link text-white"> <span class="ms-2">Contact</span> </a> </li>
         </ul>
         <hr>
-        <div class="dropdown"> <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"> <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2"> <strong> <?php echo "Hi, ".$_SESSION['login_teacher'] ?></strong> </a>
+        <div class="dropdown"> <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false"> <img src="imgs/user1.png" alt="" width="32" height="32" class="rounded-circle me-2"> <strong> <?php echo "Hi, ".$_SESSION['login_teacher'] ?></strong> </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
                 <li>
                     <hr class="dropdown-divider">
@@ -107,21 +104,48 @@ if(!isset($_SESSION['login_teacher']))
     </div>
 
     <div class="container">
-            <div class="content container-lg">
-                <div class="block mt-3">
-                    <p class="code">Subject name And Code</p>
-                    <input class="bt-start" type="button" value="Show Result">
-                </div>
-                <div class="block mt-3">
-                    <p class="code">Subject name And Code</p>
-                    <input class="bt-start" type="button" value="Show Result">
-                </div>
-                <div class="block mt-3">
-                    <p class="code">Subject name And Code</p>
-                    <input class="bt-start" type="button" value="Show Result">
-                </div>
-            </div>
-        </div>
+			<div class="content container-lg">
+				<br>
+
+				<h3 class="text-center" style="background-color:#a9a9a9">Quiz Result</h3>
+
+				<table class="table table-bordered table-hover border border-dark">
+					<thead class="table-primary">
+						<tr style="border: 1px solid white;">
+							<th style="background-color:#a9a9a9">Sr.</th>
+							<th style="background-color:#a9a9a9">Quiz Title</th>
+							<th style="background-color:#a9a9a9">Department</th>
+							<th style="background-color:#a9a9a9">College</th>
+							<th style="background-color:#a9a9a9">Description</th>
+							<th style="background-color:#a9a9a9">Action(s)</th>
+						</tr>
+					</thead>
+					<?php
+					if (mysqli_num_rows($result) > 0) {
+						$i = 1;
+						while ($row = $result->fetch_assoc()) {
+					?>
+							<tr style="border: 1px solid white;">
+								<td style="background-color:#dddddd "><?= $i; ?></td>
+								<td style="background-color:#dddddd"><?= $row['quiz_name']; ?></td>
+								<td style="background-color:#dddddd"><?= $row['dept']; ?></td>
+								<td style="background-color:#dddddd"><?= $row['college']; ?></td>
+								<td style="background-color:#dddddd"><?= $row['quiz_info']; ?></td>
+								<td style="background-color:#dddddd">
+									<form method="POST" action="t_rview.php">
+										<input type="hidden" name="qid" value="<?= $row['quiz_id']; ?>">
+										<button class="btn btn-primary me-2" type="submit">View</button>
+									</form>
+								</td>
+							</tr>
+					<?php
+							$i++;
+						}
+					}
+					?>
+				</table>
+			</div>
+		</div>
 
     </div>
 

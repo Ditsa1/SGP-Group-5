@@ -28,11 +28,7 @@ if (!empty($_POST)) {
 
 		.title1 {
 			text-align: center;
-			
 		}
-		
-}
-
 	</style>
 
 	<!-- Bootstrap CSS -->
@@ -79,90 +75,30 @@ if (!empty($_POST)) {
 				</ul>
 			</div>
 		</div>
+        <table border="1">
+            <form action="t_create_quiz.php" method="POST">
+                <tr>
+                    <th colspan="2"><h2>Enter Quiz Details</h2></th>
+    </tr>
+    <tr>
+    <td><label for="quiz_name" class="col-form-label">Quiz Title</label></td>
+    </tr>
+    <tr>
+    <td><label for="quiz_name" class="col-form-label">Department</label></td>
+    </tr>
+    <tr>
+    <td><label for="quiz_name" class="col-form-label">College</label></td>
+    </tr>
+    <tr>
+    <td><label for="quiz_name" class="col-form-label">Quiz Info</label></td>
+    </tr>
+    <tr>
+        <td><button type="submit" class="btn btn-primary">CREATE</button></td>
+    </tr>
+    </form>
+    </table>
 
-		
-		<div class="container">
-			<div class="content container-lg">
-				<div class="row">
-					<span class="title1 mt-5 pl-5" style="padding-left:18%">
-						<h4 style="text-align: center;background-color:#a9a9a9;padding-left:-50px; width: 79%">Enter Quiz Details</h4>
-					</span><br /><br />
-					<div class="col-md-2"></div>
-					<div class="col-md-8">
-						<table  style="width:100%;background-color:#dddddd">
-						<form action="t_create_quiz.php" method="POST">
-							<div class="row g-3 align-items-center justify-content-between">
-								<div class="col-auto" >
-									<td>
-									<th colspan="2" style="text-align: center;background-color:#dddddd;"><label for="quiz_name" class="col-form-label">Quiz Title</label></th>
-                                    </td>
-								</div>
-
-								<div class="col-auto">
-									<td style="background-color:#dddddd;">
-									<th style="background-color:#dddddd"><input id="quiz_name" name="quiz_name" class="form-control input-md" type="text" placeholder="Enter Quiz title"></th>
-</td>
-								</div>
-							</div>
-							<tr style="border: 1px solid white;">
-
-							<div class="row g-3 align-items-center justify-content-between">
-								<div class="col-auto"><td>
-								<th colspan="2" style="text-align: center;background-color:#dddddd;"><label for="dept" class="col-form-label">Department</label></th>
-</td>
-								</div>
-
-								<div class="col-auto">
-									<td style="background-color:#dddddd;">
-									<th style="background-color:#dddddd"><input id="dept" name="dept" class="form-control input-md" type="text" placeholder="Enter Department"></th>
-</td>
-								</div>
-							</div>
-</tr>
-<tr  style="border: 1px solid white;">
-
-							<div class="row g-3 align-items-center justify-content-between">
-								<div class="col-auto">
-									<td style=>
-									<th colspan="2" style="text-align: center;background-color:#dddddd;"><label for="college" class="col-form-label">College</label></th>
-</td>
-								</div>
-
-								<div class="col-auto">
-									<td style="background-color:#dddddd;">
-									<th style="background-color:#dddddd"><input id="college" name="college" class="form-control input-md" type="text" placeholder="Enter College"></th>
-</td>
-								</div>
-							</div>
-</tr>
-<tr  style="border: 1px solid white;">
-
-							<div class="row g-3 align-items-center justify-content-between">
-								<div class="col-auto">
-									<td>
-									<th colspan="2" style="text-align: center;background-color:#dddddd; "><label for="quiz_info" class="col-form-label">Quiz Info</label></th>
-</td>
-								</div>
-
-								<div class="col-auto">
-									<td style="background-color:#dddddd;">
-									<th><input id="quiz_info" name="quiz_info" class="form-control input-md" type="text" placeholder="Quiz Info"></th>
-<td>
-</tr>
-	<tr><td colspan="6">
-<div class="text-center mx-auto"><button type="submit" class="btn btn-primary">CREATE</button></div></td></tr>
-								</div>
-							</div>
-
-							
-						</form>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-	<!-- Bootstrap -->
+    <!-- Bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
