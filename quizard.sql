@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 20, 2022 at 05:43 PM
+-- Generation Time: Apr 20, 2022 at 05:50 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.2.19
 
@@ -70,7 +70,8 @@ INSERT INTO `login` (`user_id`, `username`, `first_name`, `last_name`, `dept`, `
 (5, 'amitthakkar.it@charusat.ac.in', 'Amit', 'Thakkar', 'CSE', 'CSPIT', 'amit', 'admin'),
 (6, 'hemangthakkar.cse@charusat.ac.in', 'Hemang', 'Thakkar', 'CSE', 'CSPIT', 'hemang', 'teacher'),
 (7, 'deepkothadiya.ce@charusat.ac.in', 'Deep', 'Kothadiya', 'CE', 'CSPIT', 'deep', 'teacher'),
-(10, '20ce029@charusat.edu.in', 'Misari', 'Gami', 'CE', 'CSPIT', '20ce029', 'student');
+(10, '20ce029@charusat.edu.in', 'Misari', 'Gami', 'CE', 'CSPIT', '20ce029', 'student'),
+(11, '20cs028@charusat.edu.in', 'Yash', 'Koladiya', 'CSE', 'CSPIT', '20cs028', 'student');
 
 -- --------------------------------------------------------
 
@@ -228,7 +229,7 @@ ALTER TABLE `contact`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `ques_list`
