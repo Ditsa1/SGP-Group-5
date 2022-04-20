@@ -74,8 +74,8 @@ if (!empty($_POST)) {
 
 		
 		<form method="post" action="s_contact.php" style="align: center;"> 
-			<div class="container py-5 d-flex align-items-center justify-content-center" style="margin-left: 200px;">
-				<div class="card bg-secondary text-dark" style="border-radius: 1rem;">
+			<div class="container py-5 d-flex align-items-center justify-content-center" style="margin-left: 150%; margin-top: 20%;">
+				<div class="card bg-secondary text-dark" style="border-radius: 1rem;"> 
 					<div class="card-body p-5 text-center" >
 						<div class="form-outline form-white mb-4">
 							<label for="user_name" class="form-label">Username</label><br>
