@@ -151,7 +151,7 @@ if (!isset($_SESSION['login_admin'])) {
 				<div class="modal-content">
 					<form id="user_form">
 						<div class="modal-header">
-							<h4 class="modal-title">Add Student</h4>
+							<h4 class="modal-title">Add Teacher</h4>
 							<button type="button" class="btn-close" data-bs-dismiss="modal" ></button>
 						</div>
 						<div class="modal-body">
